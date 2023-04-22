@@ -2,11 +2,9 @@ import React, { useState, useRef } from 'react';
 import Chevron from '../../assets/img/chevron-double-left.svg';
 import MainDatapicker from '../MainDatapicker';
 
-
 const Page1 = (props) => {
   let { values, handleChange, handleSubmit, setFieldValue } = props;
   console.log(values);
-
   return (
     <>
       <form className="form-sample mt-4 col-12 col-md-10 text-right px-2">
@@ -23,17 +21,11 @@ const Page1 = (props) => {
           </label>
         </div>
 
-       
         <MainDatapicker values={values} handleChange={handleChange} setFieldValue={setFieldValue} />
-        
 
         <div className="d-flex flex-column mt-3">
           <label className="mb-1">نوع تخفیف :</label>
-          <div
-            name="DiscountType"
-            onChange={handleChange}
-            className="radio-box d-flex mt-2"
-          >
+          <div name="DiscountType" className="radio-box d-flex mt-2">
             <label
               className={`p-2 ${values.DiscountType === 'درصدی' && 'active'}`}
             >
@@ -41,6 +33,7 @@ const Page1 = (props) => {
                 name="DiscountType"
                 checked={values.DiscountType === 'درصدی'}
                 value={'درصدی'}
+                onChange={handleChange}
                 type="radio"
                 className="ml-1"
               />
@@ -52,6 +45,7 @@ const Page1 = (props) => {
               <input
                 name="DiscountType"
                 value={'مبلغی'}
+                onChange={handleChange}
                 type="radio"
                 className="ml-1"
               />
